@@ -1,3 +1,4 @@
+   <!-- add a poorly indented comment up top -->
 # Contributing
 
 When we add a new feature to Sass, we want to make sure the feature is
@@ -355,6 +356,3 @@ as follows:
 2. These pull requests may be merged as soon as they're approved. If the issue
    appears outside of work hours, it may be merged without review, but a *post
    facto* review should be done as soon as possible.
-
-
-   <!-- add a poorly indented comment up top -->
