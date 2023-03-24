@@ -1,3 +1,5 @@
+   <!-- bad formatting -->
+
 # Contributing
 
 When we add a new feature to Sass, we want to make sure the feature is
