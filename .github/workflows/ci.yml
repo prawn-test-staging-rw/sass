@@ -4,7 +4,7 @@ env: {NODE_VERSION: 18}
 
 on:
   push: {branches: [main, 'feature.*']}
-  pull_request:
+  # pull_request:
 
 jobs:
   static_analysis:
