@@ -43,16 +43,9 @@
 //   console.error();
   
 //   console.log("hi jenny, creating a log, merge conflict");
-
-<<<<<<< HEAD
+//   console.log("hi jenny, creating a log, another merge conflict");
 //   process.exitCode = 1;
 // });
-=======
-  console.log("hi jenny, creating a log, test-1");
-
-  process.exitCode = 1;
-});
->>>>>>> 81acb14 (commit)
 
 // if (process.exitCode === 1) {
 //   console.error(
