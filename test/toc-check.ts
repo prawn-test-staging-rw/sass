@@ -50,6 +50,7 @@ toc.files.forEach(file => {
 =======
 //   console.log("hi jenny, creating a log, merge conflict");
 //   console.log("hi jenny, creating a log, another merge conflict");
+//   console.log("hi jenny, creating a log, test2 branch another merge conflict");
 //   process.exitCode = 1;
 // });
 >>>>>>> 7729771 (hi)
