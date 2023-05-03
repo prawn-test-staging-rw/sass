@@ -42,10 +42,17 @@ toc.files.forEach(file => {
   }
   console.error();
   
+<<<<<<< HEAD
   console.log("hi jenny, creating a log, merge conflict");
 
   process.exitCode = 1;
 });
+=======
+//   console.log("hi jenny, creating a log, merge conflict");
+//   console.log("hi jenny, creating a log, another merge conflict");
+//   process.exitCode = 1;
+// });
+>>>>>>> 7729771 (hi)
 
 if (process.exitCode === 1) {
   console.error(
