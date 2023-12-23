@@ -55,7 +55,7 @@ jobs:
     - name: trunk check
       uses: trunk-io/trunk-action@v1
       with:
-        trunk-token: c5b48d897c3acb66a896b8f23ad818eacbc42fd7
+        trunk-token: 315cd26aaae96c049883cb2cc7ba20a4433d34c6
         check-mode: all
         arguments: --replace
         debug: true
