@@ -58,4 +58,5 @@ jobs:
         trunk-token: ${{ env.TRUNK_API_TOKEN }}
         check-mode: all
         arguments: --replace
+        debug: true
 
