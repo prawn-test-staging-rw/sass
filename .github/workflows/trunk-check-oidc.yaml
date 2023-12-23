@@ -1,0 +1,53 @@
+name: trunk check oidc demo
+
+on:
+  push:
+    branches: [main]
+    
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read  # This is required for actions/checkout
+
+jobs:
+  oidc-test:
+    runs-on: ubuntu-latest
+    steps:
+      
+    - name: Install OIDC Client from Core Package
+      run: npm install @actions/core@1.6.0 @actions/http-client jwks-rsa jsonwebtoken
+          
+    - name: get token from trunk
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const actions = require('@actions/core');
+          let githubJwt = await actions.getIDToken();
+
+          console.log("Here we have an ID token `id_token` - we can send this to our backend")
+
+          const jwksClient = require('jwks-rsa'); // from auth0
+          const jwt = require('jsonwebtoken');
+
+          const response = await fetch('https://api.dev2.trunk-staging.io:443/gh-redir/getApiToken', {
+            method: 'POST',
+            headers: {
+              'x-github-jwt': githubJwt
+            }
+          });
+          const data = await response.json();
+          
+          console.log(`json response`, data);
+
+
+          fs.writeFileSync(process.env.GITHUB_ENV, `TRUNK_API_TOKEN=${data.TRUNK_API_TOKEN}\n`);
+ 
+    - name: dump env
+      shell: bash
+      run: env | sort
+
+    - name: trunk check
+      uses: trunk-io/trunk-action@v1
+      with:
+        trunk-token: ${{ github.env.TRUNK_API_TOKEN }}
+        check-mode: all
+
