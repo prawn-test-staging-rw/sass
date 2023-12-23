@@ -55,7 +55,7 @@ jobs:
     - name: trunk check
       uses: trunk-io/trunk-action@v1
       with:
-        trunk-token: ${{ env.TRUNK_API_TOKEN }}
+        trunk-token: c5b48d897c3acb66a896b8f23ad818eacbc42fd7
         check-mode: all
         arguments: --replace
         debug: true
