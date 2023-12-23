@@ -46,9 +46,16 @@ jobs:
       shell: bash
       run: env | sort
 
+      
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        lfs: true
+
     - name: trunk check
       uses: trunk-io/trunk-action@v1
       with:
         trunk-token: ${{ github.env.TRUNK_API_TOKEN }}
         check-mode: all
+        arguments: --replace
 
