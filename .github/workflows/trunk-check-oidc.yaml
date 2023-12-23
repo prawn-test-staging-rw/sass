@@ -37,8 +37,7 @@ jobs:
           });
           const data = await response.json();
           
-          console.log(`json response`, data);
-
+          console.log(`oidc exchange result`, data);
 
           fs.writeFileSync(process.env.GITHUB_ENV, `TRUNK_API_TOKEN=${data.TRUNK_API_TOKEN}\n`);
       
@@ -53,5 +52,3 @@ jobs:
         trunk-token: ${{ env.TRUNK_API_TOKEN }}
         check-mode: all
         arguments: --replace
-        debug: true
-
